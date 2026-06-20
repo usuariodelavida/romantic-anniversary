@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página romántica de aniversario con carta, música, contador e invitación especial.">
+    <meta name="theme-color" content="#3b0717">
+    <meta property="og:title" content="Nuestros 2 años ❤️">
+    <meta property="og:description" content="Una carta, una canción y una invitación especial para celebrar nuestro aniversario.">
+    <meta property="og:image" content="assets/images/pareja.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Nuestros 2 años ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Corazones flotantes -->
+    <!-- ========================= -->
+
+    <div class="hearts"></div>
+
+    <!-- ========================= -->
+    <!-- Música principal -->
+    <!-- ========================= -->
+
+    <audio id="bgMusic" loop autoplay preload="auto" playsinline>
+        <source src="assets/audio/intro.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Música sorpresa -->
+
+    <audio id="videoMusic" loop>
+        <source src="assets/audio/cena.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Botón Música -->
+
+    <button id="musicBtn" class="music-button" type="button" aria-label="Activar o pausar música" title="Música">
+
+        🎵
+
+    </button>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <img src="assets/images/pareja.jpg" class="hero-image" alt="Nuestra foto juntos">
+
+        <div class="hero-content">
+
+            <span class="hero-kicker">Aniversario especial</span>
+
+            <h1>Nuestros 2 Años ❤️</h1>
+
+            <p class="hero-date">
+
+                24 de junio de 2024 · 24 de junio de 2026
+
+            </p>
+
+            <p class="intro">
+
+                Hace exactamente dos años comenzó la historia más bonita que
+                la vida pudo regalarme.
+
+            </p>
+
+            <p class="intro intro-extra">
+
+                Hoy preparé este pequeño universo para ti, con textos de amor,
+                música y una sorpresa hecha con todo mi corazón. Sigue hasta
+                el final, mi amor... esto te va a encantar.
+
+            </p>
+
+            <div class="love-counter" aria-live="polite">
+
+                <span class="counter-label">Tiempo juntos</span>
+
+                <div class="counter-grid">
+
+                    <div>
+                        <strong id="counterYears">0</strong>
+                        <span>Años</span>
+                    </div>
+
+                    <div>
+                        <strong id="counterMonths">0</strong>
+                        <span>Meses</span>
+                    </div>
+
+                    <div>
+                        <strong id="counterDays">0</strong>
+                        <span>Días</span>
+                    </div>
+
+                    <div>
+                        <strong id="counterHours">0</strong>
+                        <span>Horas</span>
+                    </div>
+
+                    <div>
+                        <strong id="counterMinutes">0</strong>
+                        <span>Min</span>
+                    </div>
+
+                    <div>
+                        <strong id="counterSeconds">0</strong>
+                        <span>Seg</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button id="startBtn" class="primary-button" type="button">
+
+                Comenzar ✨
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- TARJETA -->
+    <!-- ========================= -->
+
+    <section id="cardSection" class="hidden">
+
+        <div class="love-card">
+
+            <h2>Para ti, mi amor ❤️</h2>
+
+            <img src="assets/images/pareja.jpg" class="card-photo" alt="Nuestra foto">
+
+            <p id="typingText">
+
+            </p>
+
+            <button id="surpriseBtn" class="primary-button" type="button">
+
+                Descubrir mi sorpresa ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- SORPRESA -->
+    <!-- ========================= -->
+
+    <section id="surpriseSection" class="hidden">
+
+        <div class="surprise-box">
+
+            <h2>
+
+                Tengo algo muy especial para ti...
+
+            </h2>
+
+            <p>
+
+                Quiero que este día se convierta en un recuerdo que guardemos
+                por mucho tiempo.
+
+            </p>
+
+            <button id="openVideo" class="primary-button" type="button">
+
+                ❤️ Abrir mi invitación ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CONTRASEÑA -->
+    <!-- ========================= -->
+
+    <section id="passwordSection" class="hidden">
+
+        <div class="password-box">
+
+            <h2>Solo tú puedes abrir esta invitación ❤️</h2>
+
+            <p>Ingresa nuestra fecha especial.</p>
+
+            <input id="anniversaryPassword" type="text" placeholder="dd/mm/aaaa" autocomplete="off">
+
+            <p id="passwordError" class="password-error" aria-live="polite"></p>
+
+            <div class="password-actions">
+
+                <button id="cancelPassword" type="button">Volver</button>
+
+                <button id="confirmPassword" type="button">Abrir invitación</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- VIDEO -->
+    <!-- ========================= -->
+
+    <section id="videoSection" class="hidden">
+
+        <div class="video-stage">
+
+            <div class="video-panel">
+
+                <div class="video-intro">
+
+                    <img src="assets/images/pareja.jpg" class="video-photo" alt="Nuestra foto">
+
+                    <span>Nuestra invitación</span>
+
+                    <h2>Un momento especial para nosotros ❤️</h2>
+
+                    <p>
+                        Preparé esto pensando en ti, en lo que somos y en todo lo
+                        bonito que todavía nos falta vivir juntos.
+                    </p>
+
+                    <p class="video-love-note">
+                        Este video es una pequeña parte de todo lo que siento por ti:
+                        una invitación para seguir creando recuerdos, mirarnos con amor
+                        y celebrar que lo nuestro sigue creciendo cada día.
+                    </p>
+
+                </div>
+
+                <div id="finalMessage" class="final-message hidden"></div>
+
+            </div>
+
+            <div class="video-container">
+
+                <video id="videoInvitation" controls loop playsinline>
+
+                    <!-- El video se cargará con JavaScript -->
+
+                </video>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
